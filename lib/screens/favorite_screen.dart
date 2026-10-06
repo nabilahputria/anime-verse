@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widget/app_scaffold.dart';
+import '../widgets/app_scaffold.dart';
 
 
 class DetailScreen extends StatelessWidget {

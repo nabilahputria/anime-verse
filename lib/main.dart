@@ -1,7 +1,9 @@
+
+import 'package:anime_verse/config/routes.dart';
 import 'package:anime_verse/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 
-void main () {
+void main() {
   runApp(const MyApp());
 }
 
@@ -17,13 +19,6 @@ class MyApp extends StatelessWidget {
       ),
       routerConfig: createRouter(),
       debugShowCheckedModeBanner: false,
-
     );
   }
-
-  RouterConfig<Object>? createRouter() {}
-}
-
-class SignInScreen {
-  const new();
 }

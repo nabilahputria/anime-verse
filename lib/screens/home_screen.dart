@@ -1,7 +1,10 @@
+import 'package:anime_verse/home_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/anime_view.dart';
 import '../widgets/app_scaffold.dart';
+import '../widgets/favorite_anime_card.dart';
 import '../widgets/genre_list.dart';
 
 class HomeScreen extends StatelessWidget {

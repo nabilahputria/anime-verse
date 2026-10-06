@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:anime_verse/config/routes.dart';
-import '../widget/app_scaffold.dart';
+import '../config/routes.dart';
 import '../widgets/app_scaffold.dart';
+import 'home_screen.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +25,16 @@ class SignUpScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      // konten sign-up berada di sini
+                      // konten sign-in berada di sini
                       SizedBox(height: screenHeight * 0.1),
 
                       // TODO: Add logo here
 
                       SizedBox(height: screenHeight * 0.04),
 
-                      // SignUp Title
+                      // Signin Title
                       Text(
-                        'Join AnimeVerse!',
+                        'Welcome Back!',
                         style: TextStyle(
                           fontSize: screenWidth * (isLargeScreen ? 0.06 : 0.1),
                           fontWeight: FontWeight.w800,
@@ -46,7 +46,7 @@ class SignUpScreen extends StatelessWidget {
                       SizedBox(height: screenHeight * 0.01),
 
                       Text(
-                        'Create your account and start exploring',
+                        'Sign in to continue your anime journey',
                         style: TextStyle(
                           fontSize: screenWidth * 0.035,
                           fontWeight: FontWeight.w500,
@@ -126,17 +126,35 @@ class SignUpScreen extends StatelessWidget {
                         obscureText: true,
                       ),
 
+                      SizedBox(height: screenHeight * 0.01),
+                      // Forgot Password
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          child: Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                              fontSize: screenWidth * 0.035,
+                              color: Colors.blue.shade300,
+                            ),
+                          ),
+                          onPressed: () {
+                            // TODO: Implement forgot password functionality
+                          },
+                        ),
+                      ),
+
                       SizedBox(height: screenHeight * 0.03),
 
-
-                      // Sign Up Button
+                      // Sign In Button
                       SizedBox(
                         width: double.infinity,
                         height: screenHeight * 0.075,
                         child: ElevatedButton(
                           onPressed: () {
-                            // TODO: Implement sign up functionality
+                            // TODO: Implement sign in functionality
                             context.go(AppRoutes.home);
+
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue.withValues(alpha: 0.8),
@@ -147,7 +165,7 @@ class SignUpScreen extends StatelessWidget {
                             elevation: 5,
                           ),
                           child: Text(
-                            'Sign Up',
+                            'Sign In',
                             style: TextStyle(
                               fontSize: screenWidth * 0.045,
                               fontWeight: FontWeight.w600,
@@ -187,13 +205,13 @@ class SignUpScreen extends StatelessWidget {
                       ),
 
                       SizedBox(height: screenHeight * 0.03),
-                      // Sign up with Google
+                      // Sign in with Google
                       SizedBox(
                         width: double.infinity,
                         height: screenHeight * 0.075,
                         child: ElevatedButton.icon(
                           onPressed: () {
-                            // TODO: Implement Google sign up functionality
+                            // TODO: Implement Google sign in functionality
                           },
                           icon: SvgPicture.asset(
                             'assets/images/google_icon.svg',
@@ -224,12 +242,12 @@ class SignUpScreen extends StatelessWidget {
 
                       SizedBox(height: screenHeight * 0.04),
 
-                      // Sign in link
+                      // Sign up link
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Already have an account? ",
+                            "Don't have an account? ",
                             style: TextStyle(
                               fontSize: screenWidth * 0.04,
                               color: Colors.white70,
@@ -237,11 +255,11 @@ class SignUpScreen extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              // TODO: Navigate to sign in screen
-                              context.go(AppRoutes.signIn);
+                              // TODO: Navigate to sign up screen
+                              context.go(AppRoutes.signUp);
                             },
                             child: Text(
-                              'Sign In',
+                              'Sign Up',
                               style: TextStyle(
                                 fontSize: screenWidth * 0.04,
                                 fontWeight: FontWeight.w600,
@@ -255,6 +273,8 @@ class SignUpScreen extends StatelessWidget {
                       SizedBox(height: screenHeight * 0.05),
 
 
+
+
                     ],
                   ),
                 ),
@@ -266,10 +286,4 @@ class SignUpScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-class AppRoutes {
-  static String get signIn => null;
-
-  static String get home => null;
 }
